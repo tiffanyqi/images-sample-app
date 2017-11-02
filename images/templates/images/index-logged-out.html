@@ -1,0 +1,20 @@
+{% extends "images/base.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+      <h1>WANNA SEE SOME CORGIS???</h1>
+      <ul>
+        <li>You've never seen corgis before? <a href="{% url 'signup' %}"><button>Signup</button></a></li>
+        <li>You want to see them again? <a href="{% url 'login' %}"><button>Login</button></a></li>
+      </ul>
+      <form>
+      </form>
+    {% endblock %}
+{% block bottom %}
+    {{ block.super }}
+{% endblock %}
