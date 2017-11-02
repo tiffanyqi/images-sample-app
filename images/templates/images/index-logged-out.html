@@ -7,32 +7,12 @@
 
 {% block content %}
     {% load static %}
-        <form method="POST" action="{% url 'login' %}" onsubmit="return setProperties()" class="post-form table-holder" id="profile-form">{% csrf_token %}
-        <table class="table">
-          <thead>
-            <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>          
-            {% for field in form %}
-              <div class="fieldWrapper">
-                <tr>
-                  <td>{{ field.label_tag }}</td>
-                  <td>
-                    <div class="error-message">{{ field.errors }}</div>
-                    <div data-toggle="tooltip" data-placement="top" title="{{ field.help_text }}">{{ field }}</div>
-                  </td>
-                </tr>
-              </div>
-            {% endfor %}
-          </tbody>
-        </table>
-        <div class="text-center">
-          <button class="save btn btn-default">SAVE</button>
-        </div>
+      <h1>WANNA SEE SOME CORGIS???</h1>
+      <ul>
+        <li>You've never seen corgis before? <button>Signup</button></li>
+        <li>You want to see them again? <a href="{% url 'login' %}"><button>Login</button></a></li>
+      </ul>
+      <form>
       </form>
     {% endblock %}
 {% block bottom %}
