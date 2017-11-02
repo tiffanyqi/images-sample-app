@@ -9,7 +9,7 @@
     {% load static %}
       <h1>WANNA SEE SOME CORGIS???</h1>
       <ul>
-        <li>You've never seen corgis before? <button>Signup</button></li>
+        <li>You've never seen corgis before? <a href="{% url 'signup' %}"><button>Signup</button></a></li>
         <li>You want to see them again? <a href="{% url 'login' %}"><button>Login</button></a></li>
       </ul>
       <form>

@@ -100,7 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'images.User'
+AUTH_USER_MODEL = 'auth.User'
 LOGIN_REDIRECT_URL = 'index'
 
 # Internationalization
