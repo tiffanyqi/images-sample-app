@@ -4,10 +4,13 @@
 <html>
 {% endblock %}
     <head>
-        <title>Images</title>
+        <title>Corgi Images</title>
         <meta charset="utf-8">
         {% block head_css %}
+            <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.ico" %}"/>
             <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <link rel="stylesheet" href="{% static "css/style.css" %}">
+
             <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:700" rel="stylesheet">
         {% endblock %}
         {% block head_js %}
@@ -18,7 +21,7 @@
 
     <body>
         <ul class="nav nav-tabs">
-            <li role="presentation" class="navbar-left"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+            <li role="presentation" class="navbar-left"><a class="nav-link" href="{% url 'index' %}">Corgi Images</a></li>
             {% if user.is_authenticated %}
                 <li role="presentation" class="navbar-right"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
             {% else %}
@@ -34,6 +37,8 @@
         <footer class="footer">
         </footer>
         {% block bottom_js %}
+            <script src="{% static "js/app.js" %}"></script>
+            <script src="{% static "js/mixpanel.js" %}"></script>
         {% endblock %}
     </body>
 </html>
