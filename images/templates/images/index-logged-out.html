@@ -7,13 +7,13 @@
 
 {% block content %}
     {% load static %}
-      <h1>WANNA SEE SOME CORGIS???</h1>
-      <ul>
-        <li>You've never seen corgis before? <a href="{% url 'signup' %}"><button>Signup</button></a></li>
-        <li>You want to see them again? <a href="{% url 'login' %}"><button>Login</button></a></li>
-      </ul>
-      <form>
-      </form>
+      <div class="container">
+        <h1>WANNA SEE SOME CORGIS???</h1>
+        <h2>You've never seen corgis before? <a href="{% url 'signup' %}">
+        <br><button type="button" class="btn btn-primary">Sign Up</button></a></h2>
+        <h2>You want to see them again? <a href="{% url 'login' %}">
+        <br><button type="button" class="btn btn-primary">Login</button></a></h2>
+      </div>
     {% endblock %}
 {% block bottom %}
     {{ block.super }}
