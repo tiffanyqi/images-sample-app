@@ -15,7 +15,9 @@ def index(request):
     """Return the logged in page, or the logged out page
     """
     if request.user.is_authenticated():
-        return render(request, 'images/index-logged-in.html')
+        return render(request, 'images/index-logged-in.html', {
+            'user': request.user
+        })
     else:
         return render(request, 'images/index-logged-out.html')
 
@@ -25,6 +27,7 @@ def signup(request):
     """
     if request.method == 'POST':
         form = SignUpForm(request.POST)
+
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
@@ -32,8 +35,10 @@ def signup(request):
             user = authenticate(username=username, password=raw_password)
             log_in(request, user)
             return HttpResponseRedirect('/')
+
     else:
         form = SignUpForm()
+
     return render(request, 'images/signup.html', {'form': form})
 
 
