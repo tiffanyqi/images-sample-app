@@ -2,7 +2,7 @@
 
 {% block content %}
   <h1>Sign up</h1>
-  <form method="post">
+  <form method="post" onsubmit="return setDistinctId()">
     {% csrf_token %}
     {{ form.as_p }}
     <button class="btn btn-success" type="submit">Sign up</button>

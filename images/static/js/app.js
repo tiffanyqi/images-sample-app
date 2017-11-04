@@ -1,3 +1,35 @@
+// call identify every time there's a username
+if (document.getElementById("username")) {
+    var username = document.getElementById("username").value;
+    if (username) {
+        mixpanel.identify(username);
+    }
+}
+
+// track page views
+setTimeout(function() {
+    mixpanel.track('Page Viewed', {
+        'Page Name': $('h1').text()
+    });
+}, 1000);
+
+
+// set the distinct_id to save in back-end
+function setDistinctId() {
+    document.getElementById("id_distinct_id").value = mixpanel.get_distinct_id();
+}
+
+// increment login amount upon login
+function incrementLogin() {
+    mixpanel.people.increment("Number of Logins");
+}
+
+// resets the Mixpanel distinct_id
+function reset() {
+    mixpanel.reset();
+}
+
+// get new corgi
 function getCorgi() {
     var corgis = [
         "http://cdn.akc.org/corgi-4.jpg",
@@ -18,7 +50,9 @@ function getCorgi() {
     var randomNumber = Math.floor((Math.random() * corgis.length));
     var chosenCorgi = corgis[randomNumber];
     document.getElementById("corgi_image").src = chosenCorgi;
+
     mixpanel.track('Get Image', {
         "Image": chosenCorgi
     });
+    mixpanel.people.increment("Number of Images");
 }
