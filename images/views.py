@@ -6,6 +6,10 @@ from django.shortcuts import render
 
 from images.forms import SignUpForm
 
+from mixpanel import Mixpanel
+
+mp = Mixpanel("f7d5de61fda1835c7dcf3eddea671656")
+
 
 def index(request):
     """Return the logged in page, or the logged out page

@@ -9,9 +9,16 @@ function getCorgi() {
         "http://3.bp.blogspot.com/-AXnXOPZgqMk/Un-xCBAa4gI/AAAAAAAAsWA/z_lZsvDoCRk/s1600/derpstages.jpg",
         "http://1.bp.blogspot.com/-5HJshY2CgMs/Un-x7BxZfcI/AAAAAAAAsWM/kwRcF-G11Fo/s640/derpoc.jpg",
         "http://buzzsharer.com/wp-content/uploads/2015/06/jumping-corgi-winter.jpg",
-        "http://4fluffypaws.com/wp-content/uploads/2017/02/corgi-jumping-off-dock.png"
+        "http://4fluffypaws.com/wp-content/uploads/2017/02/corgi-jumping-off-dock.png",
+        "http://adogbreeds.com/wp-content/uploads/2012/12/Pembroke-Welsh-Corgi-Puppies-Play-at-Black-Gravel.jpg",
+        "https://assets3.thrillist.com/v1/image/2444807/size/tmg-article_tall;jpeg_quality=20.jpg",
+        "https://gfp-2a3tnpzj.stackpathdns.com/wp-content/uploads/2016/05/Buffy_photo-4-600x600.jpg",
+        "http://r.ddmcdn.com/w_624/s_f/o_1/cx_0/cy_17/cw_624/ch_416/APL/uploads/2014/06/corgi-01-625x450.jpg"
     ];
     var randomNumber = Math.floor((Math.random() * corgis.length));
     var chosenCorgi = corgis[randomNumber];
     document.getElementById("corgi_image").src = chosenCorgi;
+    mixpanel.track('Get Image', {
+        "Image": chosenCorgi
+    });
 }
