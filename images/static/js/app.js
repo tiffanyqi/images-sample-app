@@ -1,3 +1,11 @@
+/**
+This file contains all the Javascript code to power the app. You'll 
+need to add extra functions and the Mixpanel integration code in this
+file.
+**/
+
+
+// changes the image to a random corgi via hardcoded links
 function getCorgi() {
     var corgis = [
         "http://cdn.akc.org/corgi-4.jpg",
